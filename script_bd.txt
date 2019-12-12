@@ -1,0 +1,37 @@
+create table usuario(
+id serial primary key,
+login varchar,
+	senha varchar
+
+)
+
+create table veiculos(
+id serial primary key,
+	placa varchar(7),
+	tipo varchar(10)
+)
+
+create table abastecimento (
+id serial not null,
+odo varchar not null,
+litros decimal not null,
+total_pago decimal not null,
+nome_posto varchar not null,
+tipo_combustivel varchar not null,
+id_veiculo varchar not null,
+data date not null,
+constraint rel_veiculo_abastecimento foreign key (id) references veiculos
+)
+
+
+
+create table abastecimento(
+id serial not null primary key,
+odonumeric(10,2),
+	litros numeric(10,2),
+total_pago numeric(10,2),
+nome_posto varchar,
+tipo_combustivel varchar,
+placa_veiculo varchar,
+	data_abastecimento date
+)
